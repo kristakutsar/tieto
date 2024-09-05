@@ -16,13 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($yhendus, $_POST['username']);
     $password = mysqli_real_escape_string($yhendus, $_POST['password']);
 
-    // Debugging step: print the hashed password
-    // echo "MD5 hashed password: " . MD5($password) . "<br>";
-
     $query = "SELECT * FROM users WHERE username='$username' AND password=MD5('$password')";
-    
-    // Debugging step: print the query
-    // echo "SQL Query: " . $query . "<br>";
 
     $result = mysqli_query($yhendus, $query);
 
