@@ -1,17 +1,8 @@
 <?php
 session_start();
 
-// Ühendus andmebaasiga
-$host = 'localhost';
-$user = 'krista';
-$password = 'krista';
-$database = 'restod';
-
-$yhendus = mysqli_connect($host, $user, $password, $database);
-
-if (!$yhendus) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+// Laadime ühenduse konfiguratsiooni
+require_once 'config.php'; // Lisame config.php faili, et kasutada ühendust
 
 // Otsingu funktsioon
 $otsi = $_GET['otsi'] ?? '';
@@ -45,7 +36,7 @@ $paring .= " ORDER BY $sort $order LIMIT $offset, $perPage";
 $valjund = mysqli_query($yhendus, $paring);
 
 if (!$valjund) {
-    die("Query failed: " . mysqli_error($yhendus));
+    die("Päring ebaõnnestus: " . mysqli_error($yhendus));
 }
 ?>
 

@@ -78,7 +78,7 @@ CREATE TABLE `restod` (
 -- Dumping data for table `restod`
 --
 
-INSERT INTO `restod` (`id`, `resto`, `asukoht`, `keskmine`, `hinnatud`) VALUES
+INSERT INTO `esirestod` (`id`, `resto`, `asukoht`, `keskmine`, `hinnatud`) VALUES
 (1, 'Matsoft', 'Sweden', '6.99', 137),
 (2, 'Regrant', 'China', '7.64', 118),
 (3, 'Lotlux', 'Ukraine', '5.49', 65),
